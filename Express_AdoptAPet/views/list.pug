@@ -1,0 +1,13 @@
+extends layout
+
+block title
+  | List of #{animalType}
+
+block content
+  .nav
+    a(href='/') Home
+  h1 List of #{animalType}
+  ul
+    each animal, index in animals
+      li
+        a(href='/' + animalType + '/' + index)= animal.name 

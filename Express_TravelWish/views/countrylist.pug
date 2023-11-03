@@ -1,0 +1,8 @@
+extends layout
+include country-mixin.pug
+
+block content
+  h1 Travel Wishlist
+  .country-list
+    each c in countries
+      +country(c.name, c.alpha2, c.alpha3, c.visited)

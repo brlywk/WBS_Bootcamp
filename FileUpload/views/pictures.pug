@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 
+      | All the pictures
+  body 
+    h1 All the pictures 
+    p
+      a(href="/") Back to upload
+    div 
+      each pic in pictures 
+        div 
+          p= pic.path
+          img(src=pic.path, alt=pic.name)
+        

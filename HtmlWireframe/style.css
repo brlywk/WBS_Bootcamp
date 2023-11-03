@@ -1,0 +1,400 @@
+/* ==== FONTS ==== */
+@font-face {
+    font-family: "MS Sans Serif";
+    src: url("./fonts/ms_sans_serif.woff") format("woff");
+    src: url("./fonts/ms_sans_serif.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MS Sans Serif";
+    src: url("./fonts/ms_sans_serif_bold.woff") format("woff");
+    src: url("./fonts/ms_sans_serif_bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ==== VARIABLES ==== */
+:root {
+    /* colors */
+    --color: #000000;
+    --background-color: #008081;
+
+    --frame-highlight: #FFFFFF;
+    --frame-shadow: #808080;
+    --frame-dark-outline: #0A0A0A;
+    --frame-background: #C0C0C0;
+
+    --button-background: #DFDFDF;
+
+    --title-color: #FFFFFF;
+    --title-left: #000080;
+    --title-right: #1084d0;
+
+    --link: #0000FF;
+
+    /* borders */
+    --border-width: 1px;
+    --border-raised-outer: inset -1px -1px var(--frame-dark-outline),
+        inset 1px 1px var(--frame-highlight);
+    --border-raised-inner: inset -2px -2px var(--frame-shadow),
+        inset 2px 2px var(--frame-background);
+    --border-sunken-outer: inset -1px -1px var(--frame-highlight),
+        inset 1px 1px var(--frame-dark-outline);
+    --border-sunken-inner: inset -2px -2px var(--frame-background),
+        inset 2px 2px var(--frame-shadow);
+
+    /* spacing */
+    --spacing-large: 16px;
+    --spacing-medium: 8px;
+    --spacing-small: 4px;
+    --margin: 1rem;
+
+    /* gradient */
+    --title-gradient: linear-gradient(to right, var(--title-left), var(--title-right));
+}
+
+/* ==== ELEMENTS ==== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+nav,
+header,
+section,
+footer {
+    margin: 1rem;
+    padding: var(--spacing-large);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border: var(--border-width);
+    background-color: var(--frame-background);
+}
+
+button {
+    font-family: "MS Sans Serif", sans-serif;
+    padding: var(--spacing-medium);
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border: var(--border-width);
+    background-color: var(--frame-background);
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--button-background);
+}
+
+button:active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+
+button:focus {
+    outline: 1px dotted var(--color);
+    outline-offset: calc(-1 * var(--spacing-small));
+}
+
+input,
+textarea {
+    font-family: "MS Sans Serif", sans-serif;
+    padding: var(--spacing-small) var(--spacing-medium);
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    border: var(--border-width);
+    background-color: var(--title-color);
+    padding: var(--spacing-medium);
+    margin: var(--spacing-medium) 0;
+    width: 100%;
+}
+
+hr {
+    width: 100%;
+    margin: var(--spacing-large) auto;
+}
+
+a {
+    color: var(--link);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: var(--spacing-small);
+}
+
+a:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--frame-highlight) var(--frame-shadow) var(--frame-shadow) var(--frame-highlight);
+}
+
+a:active {
+    border-color: var(--frame-shadow) var(--frame-highlight) var(--frame-highlight) var(--frame-shadow);
+}
+
+/* ==== NAV ==== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+nav .nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav .nav-left .logo-text {
+    padding-left: var(--spacing-large);
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-image: var(--title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+nav .nav-left .logo>img {
+    height: 48px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    padding-left: var(--spacing-large);
+}
+
+nav li a {
+    color: var(--link);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: var(--spacing-large);
+    font-weight: bold;
+    background-image: var(--title-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    border: 1px;
+}
+
+nav li a:hover {
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border: var(--border-width);
+    background-color: var(--frame-background);
+}
+
+nav li a:active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    color: var(--link);
+}
+
+/* ==== HEADER ==== */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://cutewallpaper.org/21/windows-98-clouds-wallpaper/Windows-98-Plus-Wallpapers-57+-images-.jpg");
+    background-repeat: no-repeat;
+}
+
+header p {
+    text-align: center;
+    background-color: var(--frame-background);
+    padding: var(--spacing-medium);
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+
+/* ==== MAIN ==== */
+section,
+footer {
+    margin: var(--margin);
+    padding: 2px;
+}
+
+section>.header,
+footer>.header {
+    background: var(--title-gradient);
+    color: var(--title-color);
+    padding: var(--spacing-medium);
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section>.header>span,
+footer>.header>span {
+    padding-left: var(--spacing-large);
+    width: 100%;
+}
+
+section>.header>.window-controls,
+footer>.header>.window-controls {
+    justify-content: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+section>.header>.window-controls>button,
+footer>.header>.window-controls>button {
+    margin: 0;
+    padding: var(--spacing-small);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section>.header>.window-controls>button:hover,
+footer>.header>.window-controls>button:hover {
+    background-color: var(--frame-background);
+}
+
+section>.header>.window-controls>button>svg {
+    width: 16px;
+    height: 16px;
+}
+
+section>.content,
+footer>.content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: var(--spacing-large);
+}
+
+/* The Duck */
+#duck .duck-image {
+    background-color: var(--frame-background);
+    width: 25%;
+}
+
+#duck .duck-image>img {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    padding: var(--spacing-medium);
+    border: var(--border-width);
+    width: 100%;
+    margin: 0;
+    animation: angry-quacken 0.25s linear 5s 3;
+}
+
+@keyframes angry-quacken {
+    0% {
+        transform: rotate(0deg);
+        filter: blur(3px);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+        filter: blur(3px);
+    }
+
+    75% {
+        transform: rotate(15deg);
+        filter: blur(3px);
+    }
+
+    100% {
+        transform: rotate(0deg);
+        filter: blur(3px);
+    }
+}
+
+/* Emergency Links */
+#emergency .emergency-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+#emergency .emergency-links>a {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    line-height: 1.5;
+    border: 1px dotted var(--color);
+}
+
+#emergency .emergency-links>a:hover {
+    border: none;
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+    border: var(--border-width);
+    background-color: var(--frame-background);
+}
+
+#emergency .emergency-links>a:active {
+    color: var(--link);
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+}
+
+
+/* ==== FOOTER ==== */
+footer>.content {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer form button {
+    width: 100%;
+    padding: var(--spacing-medium);
+}
+
+footer .created-by {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .created-by a {
+    color: var(--color);
+    transition: all 0.3s ease-in-out;
+}
+
+footer .created-by a:hover {
+    color: var(--link);
+}
+
+footer .created-by>p {
+    font-size: .75rem;
+    margin: var(--spacing-medium);
+}
+
+/* ==== CLASSES ==== */
+.quote {
+    background-color: var(--button-background);
+    padding: var(--spacing-large);
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    font-style: italic;
+    line-height: 2;
+    margin: calc(2 * var(--spacing-large)) auto;
+}

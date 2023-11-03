@@ -1,0 +1,15 @@
+extends layout
+
+block title
+  | #{animal.name}
+
+block content
+  .nav
+    a(href='/') Home
+    a(href='/' + animalType) Back to #{animalType}
+  h1= animal.name
+  img(src=animal.url alt=animal.name)
+  ul
+    li Breed: #{animal.breed}
+    li Age: #{animal.age}
+  p= animal.description

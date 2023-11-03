@@ -1,0 +1,8 @@
+mixin country(name, alpha2, alpha3, visited=false)
+  .country
+    .name= name
+    .info
+      .code
+        .alpha2= alpha2
+        .alpha3= alpha3
+    .visited= visited ? 'Yes' : 'No'

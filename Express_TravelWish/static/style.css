@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 50vw;
+  margin: 4rem auto;
+}
+
+.country-list {
+  margin: 2rem auto;
+}
+
+.country {
+  text-align: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+}
+
+.country .name {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info .code {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0.5rem;
+}

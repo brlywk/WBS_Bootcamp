@@ -1,0 +1,12 @@
+extends layout
+
+block title
+  | Adopt-A-Pet
+
+block content
+  h1 Welcome to Adopt-A-Pet
+  p Browse through the links below to find your new furry friend:
+  ul
+    each animal in animals
+      li
+        a(href='/' + animal)= animal[0].toUpperCase() + animal.slice(1) 
